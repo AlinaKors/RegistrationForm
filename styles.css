@@ -28,9 +28,14 @@ body {
   width: 100%;
   max-width: 440px;
   box-shadow: 0 15px 40px rgba(255, 183, 135, 0.3);
+  position: relative;
+  max-height: 800px;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
 }
 
-h2 {
+h1,
+h3 {
   text-align: center;
   margin-bottom: 30px;
   font-weight: 700;
@@ -115,7 +120,7 @@ input.error {
 
 .btn {
   width: 100%;
-  padding: 14px;
+  padding: 18px;
   font-size: 16px;
   font-weight: 600;
   background: linear-gradient(135deg, #ffa87f, #f77d6a);
@@ -125,6 +130,7 @@ input.error {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  margin-top: 24px;
   transition: background 0.4s ease, transform 0.2s ease;
 }
 
@@ -147,4 +153,31 @@ input.error {
 .btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 20px rgba(255, 130, 95, 0.3);
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s ease;
+}
+
+.block {
+  transition: opacity 0.5s ease;
+}
+
+#successBlock {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  right: 30px;
+}
+
+.form-container.shrink {
+  max-height: 100px;
 }

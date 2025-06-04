@@ -8,8 +8,8 @@
   </head>
   <body>
     <div class="form-container">
-      <h2>Регистрация</h2>
-      <form id="registrationForm" novalidate>
+      <form id="registrationForm" class="block visible" novalidate>
+        <h1>Регистрация</h1>
         <div class="form-group">
           <label for="login">Логин</label>
           <div class="input-wrapper">
@@ -59,6 +59,10 @@
 
         <button type="submit" class="btn">Зарегистрироваться</button>
       </form>
+
+      <div id="successBlock" class="block hidden">
+        <h3>Спасибо за регистрацию!</h3>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

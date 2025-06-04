@@ -1,4 +1,5 @@
 const regForm = document.getElementById('registrationForm');
+const successBlock = document.getElementById('successBlock');
 
 // проверка полей на валидацию
 const validateField = (input, tooltip) => {
@@ -56,6 +57,17 @@ regForm.addEventListener('submit', (e) => {
 
   if (isValid) {
     successRegistration(regForm);
+
+    regForm.classList.remove('visible');
+    regForm.classList.add('hidden');
+
+    const formContainer = document.querySelector('.form-container');
+    formContainer.classList.add('shrink');
+
+    setTimeout(() => {
+      successBlock.classList.remove('hidden');
+      successBlock.classList.add('visible');
+    }, 500);
   }
 });
 
