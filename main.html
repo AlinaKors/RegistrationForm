@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Регистрация</h2>
+      <form id="registrationForm" novalidate>
+        <div class="form-group">
+          <label for="login">Логин</label>
+          <div class="input-wrapper">
+            <input type="text" id="login" name="login" required />
+            <div class="error-tooltip">Введите логин</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <div class="input-wrapper">
+            <input type="password" id="password" name="password" required minlength="6" />
+            <div class="error-tooltip">Минимум 6 символов</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="firstname">Имя</label>
+          <div class="input-wrapper">
+            <input type="text" id="firstname" name="firstname" required />
+            <div class="error-tooltip">Введите имя</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="lastname">Фамилия</label>
+          <div class="input-wrapper">
+            <input type="text" id="lastname" name="lastname" required />
+            <div class="error-tooltip">Введите фамилию</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="middlename">Отчество</label>
+          <div class="input-wrapper">
+            <input type="text" id="middlename" name="middlename" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="city">Город</label>
+          <div class="input-wrapper">
+            <input type="text" id="city" name="city" required />
+            <div class="error-tooltip">Введите город</div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Зарегистрироваться</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
