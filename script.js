@@ -40,21 +40,31 @@ const successRegistration = async (regForm) => {
 //отправка формы
 regForm.addEventListener('submit', (e) => {
   e.preventDefault();
+
   let isValid = true;
 
   const groups = regForm.querySelectorAll('.form-group');
   groups.forEach((group) => {
     const input = group.querySelector('input');
     const tooltip = group.querySelector('.error-tooltip');
-    const valid = input.id !== 'middlename' && validateField(input, tooltip);
-    if (!valid) isValid = false;
+
+    if (input && input.id !== 'middlename') {
+      const valid = validateField(input, tooltip);
+      if (!valid) isValid = false;
+    }
   });
 
-  isValid && successRegistration();
+  if (isValid) {
+    successRegistration(regForm);
+  }
 });
 
 regForm.querySelectorAll('input').forEach((input) => {
-  const tooltip = input.parentElement.querySelector('.error-tooltip');
+  if (input.id === 'middlename') return;
+
+  const group = input.closest('.form-group');
+  const tooltip = group.querySelector('.error-tooltip');
+
   input.addEventListener('input', () => {
     validateField(input, tooltip);
   });
